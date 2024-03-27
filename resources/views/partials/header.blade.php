@@ -23,6 +23,12 @@
                             'active' => Route::currentRouteName() == 'item.index',
                         ]) href="{{ route('item.index') }}">Items</a>
                     </li>
+                    <li class="nav-item">
+                        <a @class([
+                            'nav-link',
+                            'active' => Route::currentRouteName() == 'characters.index',
+                        ]) href="{{ route('characters.index') }}">Characters</a>
+                    </li>
                 </ul>
                 <form class="d-flex my-2 my-lg-0">
                     <input class="form-control me-sm-2" type="text" placeholder="Search">
