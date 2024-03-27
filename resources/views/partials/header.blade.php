@@ -1,7 +1,9 @@
 <header>
     <nav class="navbar navbar-expand-sm ">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">Navbar</a>
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <img src="{{ asset('images/icon.svg') }}" alt="Logo" height="50">
+            </a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
                 aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
