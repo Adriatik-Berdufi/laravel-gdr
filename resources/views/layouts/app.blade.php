@@ -9,15 +9,20 @@
 
     <!-- Styles -->
     @vite('resources/js/app.js')
+    @yield('css')
 </head>
 
 <body>
-    @include('partials._navbar')
+    @include('partials.header')
 
+    
     <main>
         @yield('main-content')
     </main>
 
+    @include('partials.footer')
+
+    @yield('js')
 </body>
 
 </html>
