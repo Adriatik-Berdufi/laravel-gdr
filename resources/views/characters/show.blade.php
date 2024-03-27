@@ -6,7 +6,7 @@
 
         <a href="{{ route('characters.edit', $character) }}">Modifica</a>
         <ul>
-            @if (!null($character->description))
+            @if (!is_null($character->description))
             <li>Descrizione: {{$character->description}}</li>    
             @endif
           
