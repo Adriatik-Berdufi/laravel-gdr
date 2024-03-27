@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
 @section('main-content')
-<section class="container mt-5">
+    <section class="container mt-5">
         <h1 class="text-light text-center">Creazione Personaggi</h1>
+
+        <a class="btn btn-primary mt-3 mb-4" href="{{ route('characters.index') }}">Torna alla lista</a>
+
         <form action="{{ route('characters.store') }}" method="POST">
             @csrf
             <div class="row g-3">
@@ -40,5 +43,4 @@
 
 
     </section>
-
 @endsection
