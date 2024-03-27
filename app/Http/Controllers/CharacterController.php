@@ -14,7 +14,8 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        return view("characters.index");
+        $characters = Character::paginate();
+        return view("characters.index", compact("characters"));
     }
 
     /**
@@ -50,7 +51,7 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        //
+
     }
 
     /**
@@ -61,7 +62,7 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        //
+        return view("characters.edit", compact('character'));
     }
 
     /**
@@ -73,7 +74,9 @@ class CharacterController extends Controller
      */
     public function update(Request $request, Character $character)
     {
-        //
+        $data = $request->all();
+        $character->update($data);
+        return redirect()->route('characters.index');
     }
 
     /**
