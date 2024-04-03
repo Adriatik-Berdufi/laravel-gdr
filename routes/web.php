@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\ItemController;
+use App\Http\Controllers\Guest\PageController;
+use App\Http\Controllers\Guest\ItemController;
 use App\Http\Controllers\Admin\CharacterController;
 
 /*
