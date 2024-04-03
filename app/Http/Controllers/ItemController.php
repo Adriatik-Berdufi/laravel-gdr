@@ -10,6 +10,6 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::paginate();
-        return view('item', compact('items'));
+        return view('guest.item', compact('items'));
     }
 }

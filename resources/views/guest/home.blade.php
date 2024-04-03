@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('main-content')
+@section('content')
     <section class="container mt-5">
         <h1 class="text-light text-center">{{ $title }}</h1>
         <div>
@@ -8,4 +8,3 @@
         </div>
     </section>
 @endsection
-

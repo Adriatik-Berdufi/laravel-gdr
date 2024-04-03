@@ -9,6 +9,6 @@ class PageController extends Controller
   public function index()
   {
     $title = "Team 5";
-    return view('home', compact('title'));
+    return view('guest.home', compact('title'));
   }
 }

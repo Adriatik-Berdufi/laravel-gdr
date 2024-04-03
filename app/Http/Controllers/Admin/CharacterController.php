@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Character;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class CharacterController extends Controller
     public function index()
     {
         $characters = Character::paginate();
-        return view("characters.index", compact("characters"));
+        return view("admin.characters.index", compact("characters"));
     }
 
     /**
@@ -25,7 +26,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        return view("characters.create");
+        return view("admin.characters.create");
     }
 
     /**
@@ -51,7 +52,7 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        return view("characters.show", compact("character"));
+        return view("admin.characters.show", compact("character"));
     }
 
     /**
@@ -62,7 +63,7 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        return view("characters.edit", compact('character'));
+        return view("admin.characters.edit", compact('character'));
     }
 
     /**
@@ -76,7 +77,7 @@ class CharacterController extends Controller
     {
         $data = $request->all();
         $character->update($data);
-        return redirect()->route('characters.index');
+        return redirect()->route('characters.show', compact('character'));
     }
 
     /**
