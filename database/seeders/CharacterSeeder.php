@@ -15,14 +15,12 @@ class CharacterSeeder extends Seeder
      */
     public function run()
     {
-        $characters = config('characters');
-        // foreach ($characters as $character) {
-        //     $new_character = new Character;
-        //     $new_character->fill($character);
-        // }
-
+        $data = config('characters');
+        $characters = $data['characters'];
         foreach ($characters as $character) {
-            dd($character);
+            $new_character = new Character;
+            $new_character->fill($character);
+            $new_character->save();
         }
     }
 }
