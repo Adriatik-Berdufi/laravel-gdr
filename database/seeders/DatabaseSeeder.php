@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             ItemSeeder::class,
             TypeSeeder::class,
             CharacterSeeder::class,
+            CharacterItemSeeder::class,
         ]);
     }
 }
