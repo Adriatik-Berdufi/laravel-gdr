@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name', 200);
             $table->text('description')->nullable();
-            $table->integer('attack');
-            $table->integer('defense');
+            $table->integer('strength');
+            $table->integer('defence');
             $table->integer('speed');
+            $table->integer('intelligence');
             $table->integer('life');
             $table->timestamps();
         });
