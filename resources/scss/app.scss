@@ -28,3 +28,18 @@ body {
     border: none;
     padding: 0;
 }
+
+.card-image-character {
+    width: 70%;
+}
+
+.character-item-list {
+    height: 100px;
+    overflow: auto;
+}
+
+.character-class-description {
+    height: 600px;
+    overflow: auto;
+    scrollbar-width: none;
+}

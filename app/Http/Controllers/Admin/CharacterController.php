@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Character;
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class CharacterController extends Controller
@@ -15,7 +16,7 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        $characters = Character::paginate();
+        $characters = Character::paginate(10);
         return view("admin.characters.index", compact("characters"));
     }
 

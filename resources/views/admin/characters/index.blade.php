@@ -17,6 +17,7 @@
                             <th scope="col">Attaco</th>
                             <th scope="col">Difesa</th>
                             <th scope="col">Velocità</th>
+                            <th scope="col">Intelligenza</th>
                             <th scope="col">Vita</th>
                             <th scope="col"></th>
                         </tr>
@@ -26,9 +27,10 @@
                             <tr>
                                 <td>{{ $character->id }}</td>
                                 <td>{{ $character->name }}</td>
-                                <td>{{ $character->attack }}</td>
-                                <td>{{ $character->defense }}</td>
+                                <td>{{ $character->strength }}</td>
+                                <td>{{ $character->defence }}</td>
                                 <td>{{ $character->speed }}</td>
+                                <td>{{ $character->intelligence }}</td>
                                 <td>{{ $character->life }}</td>
                                 <td>
                                     <a href="{{ route('characters.show', $character) }}" class="me-2">

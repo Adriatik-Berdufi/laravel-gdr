@@ -13,4 +13,9 @@ class Type extends Model
     {
         return $this->hasMany(Character::class);
     }
+
+    public function getSeparatedText()
+    {
+        return explode('###', $this->description);
+    }
 }
