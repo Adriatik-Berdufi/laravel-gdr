@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name', 30);
             $table->text('description');
-            $table->string('slug', 30);
+            $table->string('slug', 30)->nullable();
             $table->string('type', 20);
             $table->string('category', 30);
             $table->string('weight', 10);

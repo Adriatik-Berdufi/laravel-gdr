@@ -28,6 +28,13 @@
                                 'active' => Route::currentRouteName() == 'characters.index',
                             ]) href="{{ route('characters.index') }}">Characters</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a @class([
+                                'nav-link',
+                                'active' => Route::currentRouteName() == 'types.index',
+                            ]) href="{{ route('types.index') }}">Types</a>
+                        </li>
                     @endauth
 
                 </ul>
