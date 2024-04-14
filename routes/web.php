@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\Guest\ItemController;
 use App\Http\Controllers\Admin\CharacterController;
+use App\Http\Controllers\Admin\TypeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('characters', CharacterController::class);
+    Route::resource('types', TypeController::class);
+
 });
 
 require __DIR__ . '/auth.php';
