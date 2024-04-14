@@ -22,6 +22,7 @@ class ItemSeeder extends Seeder
         while (!feof($file)) {
             $item_data = fgetcsv($file);
             if (!$is_first_line) {
+                $cost_cost_Array = explode(" ",$item_data[5] );
                 $item = new Item;
                 $item->name = $item_data[0];
                 $item->description = $faker->paragraph();
@@ -29,7 +30,18 @@ class ItemSeeder extends Seeder
                 $item->type = $item_data[2];
                 $item->category = $item_data[3];
                 $item->weight = $item_data[4];
-                $item->cost = $item_data[5];
+                $item->cost = intval($cost_cost_Array[0]);
+                $item->cost_unit = $cost_cost_Array[1];
+                $item->damege = $item_data[6];
+                if(str_contains($item_data[6], 'd')){
+                  $dice_aray = explode("d",$item_data[6] );
+                  $item->dice_faces = intval($dice_aray[1]);
+                  $item->dice_num = intval($dice_aray[0]);
+                }else{
+                    $item->dice_faces = null;
+                    $item->dice_num = null;
+                }
+            
                 $item->save();
             }
 

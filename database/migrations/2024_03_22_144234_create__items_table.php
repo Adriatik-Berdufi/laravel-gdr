@@ -20,7 +20,12 @@ return new class extends Migration {
             $table->string('type', 20);
             $table->string('category', 30);
             $table->string('weight', 10);
-            $table->string('cost', 10);
+            $table->unsignedTinyInteger('cost');
+            $table->string('cost_unit');
+            $table->unsignedTinyInteger('dice_num')->nullable();
+            $table->unsignedTinyInteger('dice_faces')->nullable();
+            $table->string('damege',10);
+
             $table->timestamps();
         });
     }

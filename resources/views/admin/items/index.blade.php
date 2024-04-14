@@ -15,6 +15,7 @@
                     <th scope="col">Category</th>
                     <th scope="col">Weight</th>
                     <th scope="col">Cost</th>
+                    <th scope="col">Damege</th>
 
                 </tr>
             </thead>
@@ -23,12 +24,13 @@
                     <tr>
                         <th scope="row">{{ $item->id }}</th>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->description }}</td>
+                        <td class="w-25">{{ $item->description }}</td>
                         <td>{{ $item->slug }}</td>
                         <td>{{ $item->type }}</td>
                         <td>{{ $item->category }}</td>
                         <td>{{ $item->weight }}</td>
-                        <td>{{ $item->cost }}</td>
+                        <td>{{ $item->getCost() }}</td>
+                        <td>{{ $item->damege }}</td>
                     </tr>
                 @empty
                     <tr>
