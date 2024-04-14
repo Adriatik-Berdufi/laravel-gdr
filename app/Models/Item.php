@@ -12,4 +12,8 @@ class Item extends Model
     {
         return $this->BelongsToMany(Character::class);
     }
+    public function getCost()
+    {
+        return $this->cost . " " . $this->cost_unit;
+    }
 }

@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PageController;
-use App\Http\Controllers\Guest\ItemController;
+use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\CharacterController;
 use App\Http\Controllers\Admin\TypeController;
 
@@ -21,7 +21,6 @@ use App\Http\Controllers\Admin\TypeController;
 
 Route::get('/', [PageController::class, 'index'])->name('home');
 
-Route::get('/item', [ItemController::class, 'index'])->name('item.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,6 +33,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('characters', CharacterController::class);
     Route::resource('types', TypeController::class);
+    Route::resource('items', ItemController::class);
 
 });
 

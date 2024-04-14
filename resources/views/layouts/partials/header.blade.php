@@ -18,8 +18,8 @@
                     <li class="nav-item">
                         <a @class([
                             'nav-link',
-                            'active' => Route::currentRouteName() == 'item.index',
-                        ]) href="{{ route('item.index') }}">Items</a>
+                            'active' => Route::currentRouteName() == 'items.index',
+                        ]) href="{{ route('items.index') }}">Items</a>
                     </li>
                     @auth
                         <li class="nav-item">
