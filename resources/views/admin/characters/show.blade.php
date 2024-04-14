@@ -47,7 +47,7 @@
                         @foreach ($character->items as $item)
                             <div class="d-flex justify-content-between px-4 py-2 border">
                                 <span class="d-inline-block">{{ $item->name }}</span>
-                                <a href="#">Vai all'oggetto</a>
+                                <a href="{{ route('items.show', $item) }}">Vai all'oggetto</a>
                             </div>
                         @endforeach
                     </div>

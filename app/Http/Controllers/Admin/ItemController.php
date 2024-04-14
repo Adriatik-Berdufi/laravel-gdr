@@ -12,4 +12,9 @@ class ItemController extends Controller
         $items = Item::paginate();
         return view('admin.items.index', compact('items'));
     }
+
+    public function show(Item $item)
+    {
+        return view("admin.items.show", compact("item"));
+    }
 }
