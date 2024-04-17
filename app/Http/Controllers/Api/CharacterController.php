@@ -41,7 +41,12 @@ class CharacterController extends Controller
      */
     public function show($id)
     {
-        //
+        $characters = Character::select(['id', 'type_id', 'name', 'description', 'strength', 'defence', 'speed', 'intelligence', 'life'])
+            ->where('id', $id)
+            ->with(['type:id,name,image,description', 'items:id,name,dice_num,dice_faces,damege'])
+            ->paginate(10);
+
+        return response()->json($characters);
     }
 
     /**
