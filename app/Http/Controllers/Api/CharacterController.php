@@ -41,12 +41,14 @@ class CharacterController extends Controller
      */
     public function show($id)
     {
-        $characters = Character::select(['id', 'type_id', 'name', 'description', 'strength', 'defence', 'speed', 'intelligence', 'life'])
+        $character = Character::select(['id', 'type_id', 'name', 'description', 'strength', 'defence', 'speed', 'intelligence', 'life'])
             ->where('id', $id)
             ->with(['type:id,name,image,description', 'items:id,name,dice_num,dice_faces,damege'])
             ->first();
 
-        return response()->json($characters);
+        $character->type->image = !empty($character->type->image) ? asset($character->type->image) : 'https://placehold.co/600x400';
+
+        return response()->json($character);
     }
 
     /**
