@@ -17,7 +17,7 @@ class CharacterController extends Controller
     {
         $characters = Character::select(['id', 'type_id', 'name', 'description', 'strength', 'defence', 'speed', 'intelligence', 'life'])
             ->with(['type:id,name,image,description', 'items:id,name,dice_num,dice_faces,damege'])
-            ->paginate(8);
+            ->get();
 
         return response()->json($characters);
     }
